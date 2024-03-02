@@ -1,2 +1,2 @@
-# PIRCLIP
-PIRCLIP: Remote Sensing Image-text Retrieval with Prior Instruction Representation learning
+# PIR=CLIP
+PIRCLIP: Remote Sensing Image-Text Retrieval with Prior Instruction Representation Learning
