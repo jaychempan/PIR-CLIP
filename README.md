@@ -7,13 +7,33 @@ This repo is the official implementation of "[PIR-CLIP: Remote Sensing Image-Tex
 ## ℹ️ Introduction
 This paper presents a prior instruction representation (PIR) learning paradigm that draws on prior knowledge to instruct adaptive learning of vision and text representations. Firstly, a prior instruction remote sensing image-text retrieval framework (PIR-ITR) , aimed at remote sensing vision-language understanding tasks to solve the semantic noise problem. Concretely, two progressive attention encoder (PAE) structures, Spatial-PAE and Temporal-PAE, are proposed to perform long-range dependency modeling to enhance key feature representation. In vision representation, Vision Instruction Representation (VIR) based on Spatial-PAE exploits the prior-guided knowledge of the remote sensing scene recognition by building a belief matrix to select key features for reducing the impact of semantic noise. In text representation, Language Cycle Attention (LCA) based on Temporal-PAE uses the previous time step to cyclically activate the current time step to enhance text representation capability. A cluster-wise affiliation loss is proposed to constrain the inter-classes and to reduce the semantic confusion zones in the common subspace. Based on PIR, we propose PIR-CLIP, a domain-specific CLIP-based framework for RSITR, to fill in the gaps of comparisons with open-domain retrieval methods on the remote sensing domain Comprehensive experiments demonstrate that using prior knowledge instruction could enhance vision and text representations and could outperform the state-of-the-art methods on two benchmark datasets, RSICD and RSITMD.
 ![pipline](assets/pipline.png)
-
+## 🎯 Implementation
 ### Environments
-base on `open_clip` environments
+base on `open_clip` environments, you can click here [open_clip](https://github.com/mlfoundations/open_clip).
+
+### Train
+If using Affiliation loss, add `is_aff_loss`.
+```
+python -m training.main \
+    --save-frequency 1 \
+    --report-to tensorboard \
+    --train-data="path/to/webdataset/tar" \
+    --dataset-resampled \
+    --train-num-samples num_ \
+    --dataset-type webdataset \
+    --warmup 10000 \
+    --batch-size=512\
+    --precision amp \
+    --lr=1e-5 \
+    --wd=0.5 \
+    --epochs=20 \
+    --workers=4 \
+    --model=PIR \
+    --is_aff_loss
+```
 
 ### Retrieval
-checkpoints can download from here: [Baidu Disk]()
-Retrieval Evaluation on [clip_benchmark](https://github.com/ChenDelong1999/RemoteCLIP).
+Retrieval evaluation on [CLIP Benchmark](https://github.com/ChenDelong1999/RemoteCLIP) and checkpoints can download from here: [Baidu Disk]().
 ```
 python retrieval.py \
     --model-name "PIR" \
@@ -21,6 +41,9 @@ python retrieval.py \
     --retrieval-json-dir "path/to/dataset.json" \
     --remoteclip-path "./checkpoints/PIR-CLIP_RSITMD.pt"
 ```
+## 🌎 Datasets
+
+All experiments are based on [RSITMD](https://github.com/xiaoyuan1996/AMFMN/tree/master/RSITMD), [RSICD](https://github.com/201528014227051/RSICD_optimal) datasets and pre-training dataset [RS5M](https://github.com/om-ai-lab/RS5M).
 
 ## 📝 Citation
 
