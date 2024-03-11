@@ -3,10 +3,19 @@ By [Jiancheng Pan](https://scholar.google.com/citations?user=nRPD3tAAAAAJ&hl=en&
 
 This repo is the official implementation of "[PIR-CLIP: Remote Sensing Image-Text Retrieval with Prior Instruction Representation Learning]()".
 
+- [PIR-CLIP: Remote Sensing Image-Text Retrieval with Prior Instruction Representation Learning](#pir-clip-remote-sensing-image-text-retrieval-with-prior-instruction-representation-learning)
+  - [ℹ️ Introduction](#ℹ️-introduction)
+  - [🎯 Implementation](#-implementation)
+    - [Environments](#environments)
+    - [Train](#train)
+    - [Retrieval](#retrieval)
+  - [🌎 Datasets](#-datasets)
+  - [📝 Citation](#-citation)
 
 ## ℹ️ Introduction
-This paper presents a prior instruction representation (PIR) learning paradigm that draws on prior knowledge to instruct adaptive learning of vision and text representations. Firstly, a prior instruction remote sensing image-text retrieval framework (PIR-ITR) , aimed at remote sensing vision-language understanding tasks to solve the semantic noise problem. Concretely, two progressive attention encoder (PAE) structures, Spatial-PAE and Temporal-PAE, are proposed to perform long-range dependency modeling to enhance key feature representation. In vision representation, Vision Instruction Representation (VIR) based on Spatial-PAE exploits the prior-guided knowledge of the remote sensing scene recognition by building a belief matrix to select key features for reducing the impact of semantic noise. In text representation, Language Cycle Attention (LCA) based on Temporal-PAE uses the previous time step to cyclically activate the current time step to enhance text representation capability. A cluster-wise affiliation loss is proposed to constrain the inter-classes and to reduce the semantic confusion zones in the common subspace. Based on PIR, we propose PIR-CLIP, a domain-specific CLIP-based framework for RSITR, to fill in the gaps of comparisons with open-domain retrieval methods on the remote sensing domain Comprehensive experiments demonstrate that using prior knowledge instruction could enhance vision and text representations and could outperform the state-of-the-art methods on two benchmark datasets, RSICD and RSITMD.
+This paper introduces a Prior Instruction Representation (PIR) learning paradigm that draws on prior knowledge to instruct adaptive learning of vision and text representations. Firstly, a Prior Instruction Remote Sensing Image-Text Retrieval (PIR-ITR) framework is designed to address semantic noise issues in vision-language understanding tasks. Specifically, we introduce two Progressive Attention Encoder (PAE) structures: Spatial-PAE and Temporal-PAE, aimed at modeling long-range dependencies to enhance the representation of key features. In vision representation, Vision Instruction Representation (VIR) based on Spatial-PAE utilizes the prior-guided knowledge of the remote sensing scene recognition by building a belief matrix to select key features for reducing the impact of semantic noise. In text representation, Language Cycle Attention (LCA) based on Temporal-PAE uses the previous time step to cyclically activate the current time step to enhance text representation capability. A cluster-wise affiliation loss is proposed to constrain the inter-classes and to reduce the semantic confusion zones in the common subspace. \textcolor{black}{Based on PIR, we propose PIR-CLIP, a domain-specific CLIP-based framework for RSITR, to further improve open-domain retrieval performance.} Comprehensive experiments demonstrate that using prior knowledge instruction could enhance vision and text representations and could outperform the state-of-the-art methods on two benchmark datasets, RSICD and RSITMD.
 ![pipline](assets/pipline.png)
+
 ## 🎯 Implementation
 ### Environments
 base on `open_clip` environments, you can click here [open_clip](https://github.com/mlfoundations/open_clip).
