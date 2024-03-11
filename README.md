@@ -12,14 +12,14 @@ This paper presents a prior instruction representation (PIR) learning paradigm t
 base on `open_clip` environments, you can click here [open_clip](https://github.com/mlfoundations/open_clip).
 
 ### Train
-If using Affiliation loss, add `is_aff_loss` where the label information is obtained by `image_name` from datasets.
+If using Affiliation loss, add `is_aff_loss` where the label information is obtained by `image_name` from datasets. For example, we can train PIR-CLIP using the follow commad:
 ```
 python -m training.main \
     --save-frequency 1 \
     --report-to tensorboard \
     --train-data="path/to/webdataset/tar" \
     --dataset-resampled \
-    --train-num-samples num_ \
+    --train-num-samples num_dataset \
     --dataset-type webdataset \
     --warmup 10000 \
     --batch-size=512\
