@@ -12,7 +12,7 @@ This paper presents a prior instruction representation (PIR) learning paradigm t
 base on `open_clip` environments, you can click here [open_clip](https://github.com/mlfoundations/open_clip).
 
 ### Train
-If using Affiliation loss, add `is_aff_loss`.
+If using Affiliation loss, add `is_aff_loss` where the label information is obtained by `image_name` from datasets.
 ```
 python -m training.main \
     --save-frequency 1 \
