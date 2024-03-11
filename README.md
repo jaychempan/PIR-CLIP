@@ -31,7 +31,14 @@ python -m training.main \
     --model=PIR \
     --is_aff_loss
 ```
-
+or parallel training as
+```
+torchrun --nproc_per_node 2 \
+    --rdzv_endpoint=$HOSTE_NODE_ADDR \
+    -m training.main \
+    --save-frequency 1 \
+    ...
+```
 ### Retrieval
 Retrieval evaluation on [CLIP Benchmark](https://github.com/ChenDelong1999/RemoteCLIP) and checkpoints can download from here: [Baidu Disk]().
 ```
