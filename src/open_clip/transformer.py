@@ -512,19 +512,16 @@ class VisionTransformer(nn.Module):
 
         x = self.patch_dropout(x)
         x = self.ln_pre(x)
-        # 加入指示嵌入(可以考虑注射到哪一层)
+
         belief_matrix = F.softmax(torch.matmul(x, y.transpose(-2, -1)).squeeze(), dim=-1)
         sorted_fscore, sorted_ind = torch.sort(belief_matrix, dim=1, descending=True)
         index_weights = 1.0 / torch.sqrt(sorted_ind+1)
         x = F.normalize(x * belief_matrix.unsqueeze(dim=-1) + x * belief_matrix.unsqueeze(dim=-1))
         x = torch.cat([y,x], dim=1)
         x = x.permute(1, 0, 2)  # NLD -> LND
-        # print(x.shape)
-        
+
         x = self.transformer(x)
         x = x.permute(1, 0, 2)  # LND -> NLD
-        # 去除第二个维度的第一个
-        # x = x[:,1:,:]
         
         if self.attn_pool is not None:
             if self.attn_pool_contrastive is not None:
