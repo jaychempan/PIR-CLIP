@@ -55,7 +55,7 @@ python retrieval.py \
     --model-name "PIR" \
     --retrieval-images-dir "path/to/images" \
     --retrieval-json-dir "path/to/dataset.json" \
-    --remoteclip-path "./checkpoints/PIR-CLIP_RSITMD.pt"
+    --remoteclip-path "./checkpoints/PIR-CLIP_RET-3.pt"
 ```
 ## 🌎 Datasets
 
