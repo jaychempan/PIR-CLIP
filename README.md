@@ -1,5 +1,5 @@
 # PIR-CLIP: Remote Sensing Image-Text Retrieval with Prior Instruction Representation Learning
-By [Jiancheng Pan](https://scholar.google.com/citations?user=nRPD3tAAAAAJ&hl=en&oi=ao), Muyuan Ma, Qing Ma, [Cong Bai](https://scholar.google.com/citations?hl=zh-CN&user=XGZ4UZgAAAAJ&view_op=list_works&sortby=pubdate).
+By [Jiancheng Pan](https://scholar.google.com/citations?user=nRPD3tAAAAAJ&hl=en&oi=ao), Muyuan Ma, Qing Ma, [Cong Bai](https://scholar.google.com/citations?hl=zh-CN&user=XGZ4UZgAAAAJ&view_op=list_works&sortby=pubdate), [Shengyong Chen](https://scholar.google.com/citations?user=6nSU254AAAAJ&hl=en).
 
 This repo is the official implementation of "[PIR-CLIP: Remote Sensing Image-Text Retrieval with Prior Instruction Representation Learning]()".
 
