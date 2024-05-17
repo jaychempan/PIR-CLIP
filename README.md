@@ -13,7 +13,7 @@ This repo is the official implementation of "[PIR-CLIP: Remote Sensing Image-Tex
   - [📝 Citation](#-citation)
 
 ## ℹ️ Introduction
-Remote sensing image-text retrieval constitutes a foundational aspect of remote sensing interpretation tasks, facilitating the alignment of vision and language representations. This paper introduces a Prior Instruction Representation (PIR) learning paradigm that draws on prior knowledge to instruct adaptive learning of vision and text representations. Firstly, a Prior Instruction Remote Sensing Image-Text Retrieval (PIR-ITR) framework is designed to address semantic noise issues in vision-language understanding tasks. Specifically, we introduce two Progressive Attention Encoder (PAE) structures: Spatial-PAE and Temporal-PAE, aimed at modeling long-range dependencies to enhance the representation of key features. In vision representation, Vision Instruction Representation (VIR) based on Spatial-PAE utilizes the prior-guided knowledge of the remote sensing scene recognition by building a belief matrix to select key features for reducing the impact of semantic noise. In text representation, Language Cycle Attention (LCA) based on Temporal-PAE uses the previous time step to cyclically activate the current time step to enhance text representation capability. A cluster-wise affiliation loss is proposed to constrain the inter-classes and to reduce the semantic confusion zones in the common subspace. \textcolor{black}{Based on PIR, we propose PIR-CLIP, a domain-specific CLIP-based framework for RSITR, to further improve open-domain retrieval performance.} Comprehensive experiments demonstrate that using prior knowledge instruction could enhance vision and text representations and could outperform the state-of-the-art methods on two benchmark datasets, RSICD and RSITMD.
+Remote sensing image-text retrieval constitutes a foundational aspect of remote sensing interpretation tasks, facilitating the alignment of vision and language representations. This paper introduces a prior instruction representation (PIR) learning paradigm that draws on prior knowledge to instruct adaptive learning of vision and text representations. Based on PIR, a domain-adapted remote sensing image-text retrieval framework PIR-ITR is designed to address semantic noise issues in vision-language understanding tasks. However, with massive additional data for pre-training the vision-language foundation model, remote sensing image-text retrieval is further developed into an open-domain retrieval task. Continuing with the above, we propose PIR-CLIP, a domain-specific CLIP-based framework for remote sensing image-text retrieval, to address semantic noise in remote sensing vision-language representations and further improve open-domain retrieval performance. In vision representation, Vision Instruction Representation (VIR) based on Spatial-PAE utilizes the prior-guided knowledge of the remote sensing scene recognition by building a belief matrix to select key features for reducing the impact of semantic noise. In text representation, Language Cycle Attention (LCA) based on Temporal-PAE uses the previous time step to cyclically activate the current time step to enhance text representation capability. A cluster-wise Affiliation Loss (AL) is proposed to constrain the inter-classes and to reduce the semantic confusion zones in the common subspace. Comprehensive experiments demonstrate that PIR could enhance vision and text representations and outperform the state-of-the-art methods of closed-domain and open-domain retrieval on two benchmark datasets, RSICD and RSITMD.
 ![pipline](assets/pipline.png)
 
 ## 🎯 Implementation
@@ -73,4 +73,14 @@ If you find this code useful for your work or use it in your project, please cit
   pages={611--620},
   year={2023}
 }
+
+@misc{pan2024pir,
+      title={PIR: Remote Sensing Image-Text Retrieval with Prior Instruction Representation Learning}, 
+      author={Jiancheng Pan and Muyuan Ma and Qing Ma and Cong Bai and Shengyong Chen},
+      year={2024},
+      eprint={2405.10160},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+  
 ```
